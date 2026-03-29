@@ -1,255 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Ally Intel | Your Ally Against Algorithms</title>
+    <title>Interview Ally | Stop Being Filtered Out</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
                     colors: {
                         brand: {
-                            porcelain: '#F7F3F0',
-                            black: '#111827',
-                            stone: '#9CA3AF',
-                            wine: '#9F1239',
-                            indigo: '#312E81'
+                            bg: '#fbfaf9',
+                            pink: '#f7e7e8',
+                            accent: '#dfcabc',
+                            text: '#2a2a2a',
+                            muted: '#5a5050',
+                            lightMuted: '#6b5c5c',
+                            red: '#a53f4b'
                         }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        body {
-            background-color: #F7F3F0; /* brand-porcelain */
-            color: #111827; /* brand-black */
+        html { scroll-behavior: smooth; }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-wine selection:text-white">
+<body class="bg-brand-bg font-sans text-brand-text selection:bg-pink-100">
 
-    <nav class="w-full px-6 py-8 max-w-7xl mx-auto flex justify-between items-center">
-        <div class="font-extrabold text-xl tracking-tight text-brand-black">
-            Interview Ally <span class="text-brand-wine">Intel</span>
-        </div>
-        <div class="hidden sm:block text-sm font-medium text-brand-stone uppercase tracking-wider">
-            Your Ally Against Algorithms
-        </div>
-    </nav>
-
-    <section class="max-w-5xl mx-auto px-6 pt-24 pb-32 flex flex-col items-center text-center">
-        <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold text-brand-black tracking-tighter leading-tight mb-8">
-            Stop Being <br class="hidden sm:block" />Filtered Out.
-        </h1>
-        <p class="text-xl md:text-2xl text-brand-black/80 max-w-3xl leading-relaxed mb-10 font-medium">
-            Most resumes never reach a human. ATS software filters them out before anyone reads your name. Interview Ally rewrites resumes that beat the system — with real scores, real fixes, and results you can see.
-        </p>
-        
-        <div class="inline-block bg-brand-wine/10 border border-brand-wine/20 rounded-full px-6 py-3 mb-12">
-            <span class="text-brand-wine font-bold text-sm md:text-base tracking-wide">
-                29/100 → 89/100 · 0 Interviews → $165K Offer in 3 Weeks
-            </span>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center gap-6">
-            <a href="https://forms.gle/z1tVufGXJPSebXhb6" class="px-8 py-4 bg-brand-wine text-white font-bold rounded-lg shadow-lg hover:bg-brand-indigo transition-all duration-300 transform hover:-translate-y-1">
-                Get Your Free ATS Score
-            </a>
-            <a href="#proof" class="text-brand-indigo font-bold underline decoration-2 underline-offset-4 hover:text-brand-black transition-colors duration-300">
-                See a real resume transformation →
-            </a>
-        </div>
-    </section>
-
-    <section class="bg-white py-24 border-y border-brand-stone/20">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-brand-black text-center mb-16 tracking-tight">
-                The hiring system changed. <br class="hidden sm:block"/>Your resume didn't.
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                <div class="bg-brand-porcelain/50 border border-brand-stone/30 p-10 rounded-2xl flex flex-col items-start">
-                    <span class="text-4xl mb-6">🚫</span>
-                    <p class="text-xl font-semibold text-brand-black leading-snug">
-                        "75% of resumes are rejected by ATS before a human sees them"
-                    </p>
-                </div>
-                <div class="bg-brand-porcelain/50 border border-brand-stone/30 p-10 rounded-2xl flex flex-col items-start">
-                    <span class="text-4xl mb-6">👻</span>
-                    <p class="text-xl font-semibold text-brand-black leading-snug">
-                        "You're qualified. The algorithm doesn't know it."
-                    </p>
-                </div>
-                <div class="bg-brand-porcelain/50 border border-brand-stone/30 p-10 rounded-2xl flex flex-col items-start">
-                    <span class="text-4xl mb-6">🔁</span>
-                    <p class="text-xl font-semibold text-brand-black leading-snug">
-                        "Applying more isn't the answer. Applying smarter is."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-32 max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-black text-center mb-20 tracking-tight">
-            Choose Your Level
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 items-center">
-            
-            <div class="bg-white border border-brand-stone/30 rounded-2xl p-10 shadow-sm flex flex-col h-full">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-2xl">🎯</span>
-                    <h3 class="text-2xl font-bold text-brand-black">Entry Level</h3>
-                </div>
-                <p class="text-brand-stone font-medium mb-8">Recent grads & first-time job seekers</p>
-                <div class="text-5xl font-extrabold text-brand-wine mb-8">$67</div>
-                <ul class="space-y-4 mb-10 flex-1 text-brand-black/80 font-medium">
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> ATS Scan & Score</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> Top 3 Resume Fixes</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> Keyword Gap Report</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> 48-Hour Delivery</li>
-                </ul>
-                <button class="w-full py-4 bg-brand-wine text-white font-bold rounded-lg hover:bg-brand-indigo transition-colors duration-300">
-                <a href="https://forms.gle/jvrdy5tugqakjxfc8"  class="btn">Start Here </a>
-            </div>
-
-            <div class="bg-white border-2 border-brand-indigo rounded-2xl p-10 shadow-xl flex flex-col h-full transform lg:-translate-y-4 relative">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-indigo text-white px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">
-                    Most Popular
-                </div>
-                <div class="flex items-center gap-3 mb-4 mt-2">
-                    <span class="text-2xl">🔄</span>
-                    <h3 class="text-2xl font-bold text-brand-black">Career Pivot</h3>
-                </div>
-                <p class="text-brand-stone font-medium mb-8">Career switchers in the ATS rejection loop</p>
-                <div class="text-5xl font-extrabold text-brand-wine mb-8">$199</div>
-                <ul class="space-y-4 mb-10 flex-1 text-brand-black/80 font-medium">
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> Full Resume Rewrite</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> ATS Match Scoring</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> Custom Cover Letter</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> Company Intel Report</li>
-                    <li class="flex gap-3"><span class="text-brand-wine">✓</span> 30-Day Revisions</li>
-                </ul>
-                <button class="w-full py-4 bg-brand-wine text-white font-bold rounded-lg hover:bg-brand-indigo transition-colors duration-300">
-                    Get the Full Rewrite
-                    <a href="https://forms.gle/bdlqvnasrodvwssc7" class="btn" >Start Here </a>
-            </div>
-
-        </section>
-
-    <section id="proof" class="bg-white py-32 border-y border-brand-stone/20">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-brand-black text-center mb-16 tracking-tight">
-                Real Resumes. Real Scores. Real Results.
-            </h2>
-
-            <div class="bg-brand-porcelain border-l-8 border-brand-wine p-8 md:p-12 rounded-r-2xl shadow-sm mb-16">
-                <p class="text-xl md:text-2xl font-medium text-brand-black leading-relaxed italic mb-8">
-                    "Twelve years of experience. Forty-two applications. Zero callbacks. ATS score: 31/100. Three weeks after the rewrite — four Director-level interviews and a $165K offer. Same career. New language."
-                </p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-brand-indigo text-white rounded-full flex items-center justify-center font-bold text-lg">MD</div>
-                    <div>
-                        <div class="font-bold text-brand-black">— Marketing Director</div>
-                        <div class="text-sm font-medium text-brand-stone uppercase tracking-wide">Interview Ally Client</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-brand-stone/30">
-                <div class="pt-8 md:pt-0 px-4">
-                    <div class="text-2xl lg:text-3xl font-extrabold text-brand-indigo mb-2">42/100 → 90/100</div>
-                    <div class="font-medium text-brand-black/70">Healthcare Professional</div>
-                </div>
-                <div class="pt-8 md:pt-0 px-4">
-                    <div class="text-2xl lg:text-3xl font-extrabold text-brand-indigo mb-2">38/100 → 88/100</div>
-                    <div class="font-medium text-brand-black/70">Tech Support → Healthcare IT</div>
-                </div>
-                <div class="pt-8 md:pt-0 px-4">
-                    <div class="text-2xl lg:text-3xl font-extrabold text-brand-indigo mb-2">38/100 → 86/100</div>
-                    <div class="font-medium text-brand-black/70">DevOps → SRE Engineer</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-32 max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-black mb-20 tracking-tight">
-            From Invisible to Interview-Ready
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative mb-20">
-            <div class="hidden md:block absolute top-10 left-[16%] right-[16%] h-0.5 bg-brand-stone/30 z-0"></div>
-            
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="w-20 h-20 bg-brand-black text-white rounded-full flex items-center justify-center text-3xl font-extrabold mb-8 shadow-lg">1</div>
-                <p class="text-xl font-bold text-brand-black">Send your resume + target job description</p>
-            </div>
-            
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="w-20 h-20 bg-brand-black text-white rounded-full flex items-center justify-center text-3xl font-extrabold mb-8 shadow-lg">2</div>
-                <p class="text-xl font-bold text-brand-black">We run your ATS score and identify every gap</p>
-            </div>
-            
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="w-20 h-20 bg-brand-black text-white rounded-full flex items-center justify-center text-3xl font-extrabold mb-8 shadow-lg">3</div>
-                <p class="text-xl font-bold text-brand-black">You get a rewritten resume, a score jump, and the reasoning behind every change</p>
-            </div>
-        </div>
-
-        <a href="https://interviewintel.substack.com/p/work-with-me" class="inline-block px-10 py-5 bg-brand-wine text-white font-bold rounded-lg shadow-lg hover:bg-brand-indigo transition-all duration-300">
-            Resume Services 
-        </a>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-6 pb-32">
-        <div class="bg-brand-indigo rounded-3xl p-12 md:p-20 text-center shadow-2xl">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-                Not ready yet? Start here for free.
-            </h2>
-            <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-                Download the Data Analyst Toolkit — the ATS playbook for ops and admin professionals breaking into analytics.
+    <!-- Hero Section -->
+    <section class="bg-brand-pink px-6 py-20 md:py-32 lg:px-24 flex flex-col md:flex-row items-center justify-between overflow-hidden relative">
+        <div class="md:w-1/2 z-10 pr-0 md:pr-12 text-center md:text-left">
+            <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-6">
+                Interview Ally Intel
             </p>
-            <button class="px-10 py-5 bg-brand-wine text-white font-bold rounded-lg shadow-lg hover:bg-white hover:text-brand-indigo transition-all duration-300">
-                Get the Free Toolkit
-            </button onclick="#">Start Here</button >
-            <a href= "https://interviewintel.substack.com/p/pm-devops-healthcare-pivot-toolkits class=" btn">Start Here</a>
+            <h1 class="font-serif text-5xl md:text-7xl leading-tight text-brand-text mb-6">
+                Stop Being <br/>
+                <span class="italic text-[#8c6b6b]">Filtered Out.</span>
+            </h1>
+            <p class="text-sm md:text-base leading-relaxed text-brand-muted mb-10 max-w-md mx-auto md:mx-0">
+                Your Ally Against Algorithms. Whether you are a recent grad or a mid-career professional, we help you secure interviews. <br/><br/>
+                <strong>29/100 &rarr; 89/100 &bull; 0 Interviews &rarr; $165K Offer in 3 Weeks.</strong>
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                <a href="#services" class="bg-white text-brand-text text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
+                    Entry Level
+                </a>
+                <a href="#services" class="bg-white text-brand-text text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
+                    Career Pivot
+                </a>
+                <a href="#services" class="bg-white text-brand-text text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
+                    Relaunch
+                </a>
+            </div>
+        </div>
+        
+        <div class="md:w-1/2 mt-16 md:mt-0 relative">
+            <!-- Hero Image: Close up of resume -->
+            <div class="relative w-full h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img 
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" 
+                    alt="Close up of a resume being reviewed" 
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-brand-pink opacity-10 mix-blend-multiply"></div>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-brand-black pt-20 pb-10 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
-            <div class="text-center md:text-left">
-                <div class="font-extrabold text-2xl tracking-tight text-white mb-2">
-                    Interview Ally Intel
-                </div>
-                <div class="text-sm font-medium text-brand-stone uppercase tracking-widest">
-                    Your Ally Against Algorithms
-                </div>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-8 font-medium">
-                <a href="https://interviewintel.substack.com/subscribe class=" text-brand-stone hover:text-white transition-colors duration-200">Newsletter</a>
-                <a href="https://interviewintel.substack.com class=" text-brand-stone hover:text-white transition-colors duration-200">Substack</a>
-                <a href="https://www.linkedin.com/in/interview-ally/ class=" text-brand-stone hover:text-white transition-colors duration-200">LinkedIn</a>
-                <a href="hello.interviewally@gmail.com class=" text-brand-stone hover:text-white transition-colors duration-200">Contact</a>
-            </div>
+    <!-- Separate Image Section -->
+    <section class="w-full px-6 lg:px-24 py-12">
+        <div class="max-w-7xl mx-auto overflow-hidden rounded-sm shadow-sm">
+            <img 
+                src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=1200" 
+                alt="Aesthetic workspace with laptops" 
+                class="w-full h-[400px] md:h-[500px] object-cover"
+            />
         </div>
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-brand-stone/20 text-center text-brand-stone/60 text-sm">
-            © 2024 Interview Ally Intel. All rights reserved.
-        </div>
-    </footer>
+    </section>
 
-</body>
-</html>
+    <!-- Services Description Section -->
+    <section id="services" class="py-24 px-6 lg:px-24 max-w-5xl mx-auto">
+        <div class="pt-8">
+            <h4 class="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-12 text-center">
+                HOW MY SERVICES CAN HELP YOU LAND THE INTERVIEW
+            </h4>
+            
+            <div class="border-t border-gray-200 pt-10 mb-10">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-text mb-4">
+                    Entry Level &mdash; <span class="text-brand-red">$67</span>
+                </h2>
+                <p class="text-sm leading-loose text-brand-muted">
+                    Recent grads & first-time job seekers. Stop letting the ATS block your entry into the workforce. This package includes an ATS Scan & Score, Top 3 Resume Fixes, a Keyword Gap Report, and 48-Hour Delivery.
+                </p>
+            </div>
+
+            <div class="border-t border-gray-200 pt-10 mb-10">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-text mb-4">
+                    Career Pivot &mdash; <span class="text-brand-red">$199</span>
+                </h2>
+                <p class="text-sm leading-loose text-brand-muted">
+                    Career switchers in the ATS loop. Break free and transition smoothly. Includes a Full Resume Rewrite, ATS Match Scoring, Custom Cover Letter, Company Intel Report, and 30-Day Revisions.
+                </p>
+            </div>
+
+            <div class="border-t border-gray-200 pt-10">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-text mb-4">
+                    Career Relaunch &mdash; <span class="text-brand-red">$399</span>
+                </h2>
+                <p class="text-sm leading-loose text-brand-muted">
+                    Laid-off mid-career professionals. Reclaim your value. Includes a Senior Resume Rebuild, 3 Company Intel Reports, Priority 24-Hr Turnaround, and 60-Day Revisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services List -->
+    <section class="py-24 px-6 bg-brand-bg">
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-50">
+            <h4 class="text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-4">Interview Ally</h4>
+            <h2 class="text-center font-serif text-4xl md:text-5xl text-brand-text mb-16">FEATURED SERVICES</h2>
+
+            <div class="flex flex-col">
+                <!-- Entry Level -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-200 gap-4 group cursor-pointer">
+                    <div class="flex items-center flex-1">
+                        <div class="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=150&q=80" alt="Students" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-serif text-xl text-brand-text group-hover:text-brand-red transition-colors">Entry Level ATS Optimization</h3>
+                            <p class="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Recent Grads • $67</p>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/D5NBDxA8Dqz3xKWb8" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red transition-colors self-start md:self-auto mt-2 md:mt-0">
+                        <span>View Plan</span>
+                        <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-0.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Career Pivot -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-200 gap-4 group cursor-pointer">
+                    <div class="flex items-center flex-1">
+                        <div class="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Professional" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="font-serif text-xl text-brand-text group-hover:text-brand-red transition-colors">Career Pivot Full Rewrite</h3>
+                            <p class="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Career Switchers • $199</p>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/6meUSQRbffHp4Uqr8" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red transition-colors self-start md:self-auto mt-2 md:mt-0">
+                        <span>View Plan</span>
+                        <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-0.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Senior Relaunch -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between py-6 gap-4 group cursor-pointer">
+                    <div class="flex items-center flex-1">
+                        <div class="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Senior Professional" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        </div>
+                        <div
