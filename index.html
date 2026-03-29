@@ -1,277 +1,307 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Ally | Stop Being Filtered Out</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Lato', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            bg: '#fbfaf9',
-                            pink: '#f7e7e8',
-                            accent: '#dfcabc',
-                            text: '#2a2a2a',
-                            muted: '#5a5050',
-                            lightMuted: '#6b5c5c',
-                            red: '#a53f4b'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .line-clamp-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;  
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body class="bg-brand-bg font-sans text-brand-text selection:bg-pink-100">
+import React from 'react';
+import { Play, ArrowRight, BookOpen, ShieldCheck, Cpu, Database, Mail } from 'lucide-react';
 
-    <!-- Hero Section -->
-    <section class="bg-brand-pink px-6 py-20 md:py-32 lg:px-24 flex flex-col md:flex-row items-center justify-between overflow-hidden relative">
-        <div class="md:w-1/2 z-10 pr-0 md:pr-12 text-center md:text-left">
-            <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-6">
-                Interview Ally Intel
-            </p>
-            <h1 class="font-serif text-5xl md:text-7xl leading-tight text-brand-text mb-6">
-                Stop Being <br/>
-                <span class="italic text-[#8c6b6b]">Filtered Out.</span>
-            </h1>
-            <p class="text-sm md:text-base leading-relaxed text-brand-muted mb-10 max-w-md mx-auto md:mx-0">
-                Your Ally Against Algorithms. Whether you are a recent grad or a mid-career professional, we help you secure interviews. <br/><br/>
-                <strong>29/100 &rarr; 89/100 &bull; 0 Interviews &rarr; $165K Offer in 3 Weeks.</strong>
-            </p>
-            
-            <div class="flex flex-wrap justify-center md:justify-start gap-3">
-                <a href="#services" class="bg-white text-brand-text text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
-                    Entry Level
-                </a>
-                <a href="#services" class="bg-white text-brand-text text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
-                    Career Pivot
-                </a>
-                <a href="#services" class="bg-white text-brand-text text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-shadow">
-                    Relaunch
-                </a>
-            </div>
+export default function App() {
+  const scrollToServices = () => {
+    const servicesElement = document.getElementById('services');
+    if (servicesElement) {
+      servicesElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#fbfaf9] font-sans text-[#333333] selection:bg-[#f5e4e4]">
+      {/* Import Google Fonts */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Lato', sans-serif; }
+      `}} />
+
+      {/* Hero Section */}
+      <section className="bg-[#f7e7e8] px-6 py-20 md:py-32 lg:px-24 flex flex-col md:flex-row items-center justify-between overflow-hidden relative">
+        <div className="md:w-1/2 z-10 pr-0 md:pr-12 text-center md:text-left">
+          <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#6b5c5c] mb-6">
+            Interview Ally Intel
+          </p>
+          <h1 className="font-serif text-5xl md:text-7xl leading-tight text-[#2a2a2a] mb-6">
+            Stop Being <br/>
+            <span className="italic text-[#8c6b6b]">Filtered Out.</span>
+          </h1>
+          <p className="text-sm md:text-base leading-relaxed text-[#5a5050] mb-10 max-w-md mx-auto md:mx-0">
+            Your Ally Against Algorithms. Whether you are a recent grad or a mid-career professional, we help you secure interviews. <br/><br/>
+            <strong>29/100 &rarr; 89/100 &bull; 0 Interviews &rarr; $165K Offer in 3 Weeks.</strong>
+          </p>
+          
+          <div className="flex flex-wrap justify-center md:justify-start gap-3">
+            <button onClick={scrollToServices} className="bg-white text-[#2a2a2a] text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+              Entry Level
+            </button>
+            <button onClick={scrollToServices} className="bg-white text-[#2a2a2a] text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+              Career Pivot
+            </button>
+            <button onClick={scrollToServices} className="bg-white text-[#2a2a2a] text-[10px] font-bold uppercase tracking-widest px-6 py-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+              Relaunch
+            </button>
+          </div>
         </div>
         
-        <div class="md:w-1/2 mt-16 md:mt-0 relative">
-            <div class="relative w-full h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                <img 
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" 
-                    alt="Close up of a resume being reviewed" 
-                    class="w-full h-full object-cover"
-                />
-                <div class="absolute inset-0 bg-brand-pink opacity-10 mix-blend-multiply"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Separate Image Section -->
-    <section class="w-full px-6 lg:px-24 py-12">
-        <div class="max-w-7xl mx-auto overflow-hidden rounded-sm shadow-sm">
+        <div className="md:w-1/2 mt-16 md:mt-0 relative">
+          <div className="relative w-full h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
             <img 
-                src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=1200" 
-                alt="Aesthetic workspace with laptops" 
-                class="w-full h-[400px] md:h-[500px] object-cover"
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" 
+              alt="Close up of a resume being reviewed" 
+              className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-[#f7e7e8] opacity-10 mix-blend-multiply"></div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Services Description Section -->
-    <section id="services" class="py-24 px-6 lg:px-24 max-w-5xl mx-auto">
-        <div class="pt-8">
-            <h4 class="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-12 text-center">
-                HOW MY SERVICES CAN HELP YOU LAND THE INTERVIEW
-            </h4>
-            
-            <div class="border-t border-gray-200 pt-10 mb-10">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-text mb-4">
-                    Entry Level &mdash; <span class="text-brand-red">$67</span>
-                </h2>
-                <p class="text-sm leading-loose text-brand-muted">
-                    Recent grads & first-time job seekers. Stop letting the ATS block your entry into the workforce. This package includes an ATS Scan & Score, Top 3 Resume Fixes, a Keyword Gap Report, and 48-Hour Delivery.
-                </p>
-            </div>
-
-            <div class="border-t border-gray-200 pt-10 mb-10">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-text mb-4">
-                    Career Pivot &mdash; <span class="text-brand-red">$199</span>
-                </h2>
-                <p class="text-sm leading-loose text-brand-muted">
-                    Career switchers in the ATS loop. Break free and transition smoothly. Includes a Full Resume Rewrite, ATS Match Scoring, Custom Cover Letter, Company Intel Report, and 30-Day Revisions.
-                </p>
-            </div>
-
-            <div class="border-t border-gray-200 pt-10">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-text mb-4">
-                    Career Relaunch &mdash; <span class="text-brand-red">$399</span>
-                </h2>
-                <p class="text-sm leading-loose text-brand-muted">
-                    Laid-off mid-career professionals. Reclaim your value. Includes a Senior Resume Rebuild, 3 Company Intel Reports, Priority 24-Hr Turnaround, and 60-Day Revisions.
-                </p>
-            </div>
+      {/* Separate Image Section */}
+      <section className="w-full px-6 lg:px-24 py-12">
+        <div className="max-w-7xl mx-auto overflow-hidden rounded-sm shadow-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=1200" 
+            alt="Aesthetic workspace with laptops" 
+            className="w-full h-[400px] md:h-[500px] object-cover"
+          />
         </div>
-    </section>
+      </section>
 
-    <!-- Featured Services List -->
-    <section class="py-24 px-6 bg-brand-bg">
-        <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-50">
-            <h4 class="text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-4">Interview Ally</h4>
-            <h2 class="text-center font-serif text-4xl md:text-5xl text-brand-text mb-16">FEATURED SERVICES</h2>
+      {/* Services Description Section */}
+      <section id="services" className="py-24 px-6 lg:px-24 max-w-5xl mx-auto">
+        <div className="pt-8">
+          <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#6b5c5c] mb-12 text-center">
+            HOW MY SERVICES CAN HELP YOU LAND THE INTERVIEW
+          </h4>
+          
+          <div className="border-t border-gray-200 pt-10 mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#2a2a2a] mb-4">
+              Entry Level &mdash; <span className="text-[#a53f4b]">$67</span>
+            </h2>
+            <p className="text-sm leading-loose text-[#5a5050]">
+              Recent grads & first-time job seekers. Stop letting the ATS block your entry into the workforce. This package includes an ATS Scan & Score, Top 3 Resume Fixes, a Keyword Gap Report, and 48-Hour Delivery.
+            </p>
+          </div>
 
-            <div class="flex flex-col">
-                <!-- Entry Level -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-200 gap-4 group cursor-pointer">
-                    <div class="flex items-center flex-1">
-                        <div class="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=150&q=80" alt="Students" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                        </div>
-                        <div class="ml-6">
-                            <h3 class="font-serif text-xl text-brand-text group-hover:text-brand-red transition-colors">Entry Level ATS Optimization</h3>
-                            <p class="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Recent Grads • $67</p>
-                        </div>
-                    </div>
-                    <a href="https://forms.gle/D5NBDxA8Dqz3xKWb8" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red transition-colors self-start md:self-auto mt-2 md:mt-0">
-                        <span>View Plan</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-0.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                        </div>
-                    </a>
-                </div>
+          <div className="border-t border-gray-200 pt-10 mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#2a2a2a] mb-4">
+              Career Pivot &mdash; <span className="text-[#a53f4b]">$199</span>
+            </h2>
+            <p className="text-sm leading-loose text-[#5a5050]">
+              Career switchers in the ATS loop. Break free and transition smoothly. Includes a Full Resume Rewrite, ATS Match Scoring, Custom Cover Letter, Company Intel Report, and 30-Day Revisions.
+            </p>
+          </div>
 
-                <!-- Career Pivot -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-200 gap-4 group cursor-pointer">
-                    <div class="flex items-center flex-1">
-                        <div class="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Professional" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                        </div>
-                        <div class="ml-6">
-                            <h3 class="font-serif text-xl text-brand-text group-hover:text-brand-red transition-colors">Career Pivot Full Rewrite</h3>
-                            <p class="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Career Switchers • $199</p>
-                        </div>
-                    </div>
-                    <a href="https://forms.gle/6meUSQRbffHp4Uqr8" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red transition-colors self-start md:self-auto mt-2 md:mt-0">
-                        <span>View Plan</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-0.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Senior Relaunch -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between py-6 gap-4 group cursor-pointer">
-                    <div class="flex items-center flex-1">
-                        <div class="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Senior Professional" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                        </div>
-                        <div class="ml-6">
-                            <h3 class="font-serif text-xl text-brand-text group-hover:text-brand-red transition-colors">Senior Relaunch Rebuild</h3>
-                            <p class="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Mid-Career • $399</p>
-                        </div>
-                    </div>
-                    <a href="mailto:hello.interviewally@gmail.com?subject=Inquiry:%20Senior%20Relaunch%20Rebuild%20($399)" class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red transition-colors self-start md:self-auto mt-2 md:mt-0">
-                        <span>Request Plan</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-white group-hover:bg-brand-red transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-0.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                        </div>
-                    </a>
-                </div>
-            </div>
+          <div className="border-t border-gray-200 pt-10">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#2a2a2a] mb-4">
+              Career Relaunch &mdash; <span className="text-[#a53f4b]">$399</span>
+            </h2>
+            <p className="text-sm leading-loose text-[#5a5050]">
+              Laid-off mid-career professionals. Reclaim your value. Includes a Senior Resume Rebuild, 3 Company Intel Reports, Priority 24-Hr Turnaround, and 60-Day Revisions.
+            </p>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Substack Blog Section -->
-    <section class="py-24 px-6 lg:px-24 max-w-7xl mx-auto border-t border-gray-100">
-        <div class="text-center mb-16">
-            <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-brand-lightMuted mb-4">Career Insights</p>
-            <h2 class="font-serif text-4xl md:text-5xl text-brand-text">LATEST ON SUBSTACK</h2>
-        </div>
+      {/* Featured Services List */}
+      <section className="py-24 px-6 bg-[#fbfaf9]">
+        <div className="max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-50">
+          <h4 className="text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#6b5c5c] mb-4">Interview Ally</h4>
+          <h2 className="text-center font-serif text-4xl md:text-5xl text-[#2a2a2a] mb-16 uppercase">Featured Services</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <!-- Article 1: ATS Guide -->
-            <a href="https://open.substack.com/pub/interviewintel/p/beat-the-binary-gate?r=7nd4nd&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank" class="group block">
-                <div class="w-full h-64 overflow-hidden rounded-sm mb-6 shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="ATS Binary Gate" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="flex flex-col mb-20">
+            {/* Entry Level */}
+            <a href="https://forms.gle/D5NBDxA8Dqz3xKWb8" target="_blank" rel="noopener noreferrer" className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-200 gap-4 group">
+              <div className="flex items-center flex-1">
+                <div className="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=150&q=80" alt="Students" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <p class="text-[10px] text-brand-lightMuted uppercase tracking-widest mb-2 font-bold">Pivot Guides • Feb 20, 2026</p>
-                <h3 class="font-serif text-2xl text-brand-text mb-3 group-hover:text-brand-red transition-colors">How the ATS Actually Works (And Why You're Getting Rejected at 2 AM)</h3>
-                <p class="text-brand-muted text-sm leading-relaxed mb-4 line-clamp-3">You did everything right. You tailored every bullet. Then you woke up to a rejection at 2:17 AM—long before any human could have seen your application.</p>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red flex items-center gap-2 transition-colors">Read on Substack &rarr;</span>
+                <div className="ml-6">
+                  <h3 className="font-serif text-xl text-[#2a2a2a] group-hover:text-[#a53f4b] transition-colors">Entry Level ATS Optimization</h3>
+                  <p className="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Recent Grads • $67</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#2a2a2a] group-hover:text-[#a53f4b] transition-colors">
+                <span>View Plan</span>
+                <div className="w-8 h-8 rounded-full bg-[#dfcabc] flex items-center justify-center text-white group-hover:bg-[#a53f4b] transition-colors">
+                  <Play size={14} fill="currentColor" className="ml-0.5" />
+                </div>
+              </div>
             </a>
 
-            <!-- Article 2: Intelligence Report -->
-            <a href="https://interviewintel.substack.com/p/the-february-intelligence-report-2026?r=7nd4nd" target="_blank" class="group block">
-                <div class="w-full h-64 overflow-hidden rounded-sm mb-6 shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=600" alt="Market Intel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            {/* Career Pivot */}
+            <a href="https://forms.gle/6meUSQRbffHp4Uqr8" target="_blank" rel="noopener noreferrer" className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-200 gap-4 group">
+              <div className="flex items-center flex-1">
+                <div className="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Professional" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <p class="text-[10px] text-brand-lightMuted uppercase tracking-widest mb-2 font-bold">Market Intel • Mar 2026</p>
-                <h3 class="font-serif text-2xl text-brand-text mb-3 group-hover:text-brand-red transition-colors">The February Intelligence Report: The Panic Goes Mainstream</h3>
-                <p class="text-brand-muted text-sm leading-relaxed mb-4 line-clamp-3">January hit like a headline. Record layoffs. Historic numbers. February is when the fear went viral. The anxiety that job seekers felt quietly suddenly had a name.</p>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red flex items-center gap-2 transition-colors">Read on Substack &rarr;</span>
+                <div className="ml-6">
+                  <h3 className="font-serif text-xl text-[#2a2a2a] group-hover:text-[#a53f4b] transition-colors">Career Pivot Full Rewrite</h3>
+                  <p className="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Career Switchers • $199</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#2a2a2a] group-hover:text-[#a53f4b] transition-colors">
+                <span>View Plan</span>
+                <div className="w-8 h-8 rounded-full bg-[#dfcabc] flex items-center justify-center text-white group-hover:bg-[#a53f4b] transition-colors">
+                  <Play size={14} fill="currentColor" className="ml-0.5" />
+                </div>
+              </div>
             </a>
 
-            <!-- Article 3: Podcast -->
-            <a href="https://interviewintel.substack.com/p/ops-to-analyst-resume-signal-debate" target="_blank" class="group block">
-                <div class="w-full h-64 overflow-hidden rounded-sm mb-6 shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=600" alt="Podcast Episode" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            {/* Senior Relaunch */}
+            <a href="mailto:hello.interviewally@gmail.com?subject=Inquiry:%20Senior%20Relaunch%20Rebuild%20($399)" className="flex flex-col md:flex-row md:items-center justify-between py-6 gap-4 group">
+              <div className="flex items-center flex-1">
+                <div className="overflow-hidden rounded-sm w-16 h-16 shrink-0 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Executive" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <p class="text-[10px] text-brand-lightMuted uppercase tracking-widest mb-2 font-bold">Podcast • Career Strategy</p>
-                <h3 class="font-serif text-2xl text-brand-text mb-3 group-hover:text-brand-red transition-colors">Signal Over Skills: The Ops-to-Analyst Career Hack</h3>
-                <p class="text-brand-muted text-sm leading-relaxed mb-4 line-clamp-3">Discover how to successfully transition from operations to an analyst role. We break down why optimizing for "signal" is more powerful than listing hard skills.</p>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-text group-hover:text-brand-red flex items-center gap-2 transition-colors">Listen on Substack &rarr;</span>
+                <div className="ml-6">
+                  <h3 className="font-serif text-xl text-[#2a2a2a] group-hover:text-[#a53f4b] transition-colors">Senior Relaunch Rebuild</h3>
+                  <p className="text-[10px] text-[#8c6b6b] uppercase tracking-wider mt-1 font-bold">Mid-Career • $399</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-[#2a2a2a] group-hover:text-[#a53f4b] transition-colors">
+                <span>Request Plan</span>
+                <div className="w-8 h-8 rounded-full bg-[#dfcabc] flex items-center justify-center text-white group-hover:bg-[#a53f4b] transition-colors">
+                  <Play size={14} fill="currentColor" className="ml-0.5" />
+                </div>
+              </div>
             </a>
+          </div>
+
+          {/* Free Resource Hub Vault */}
+          <div className="pt-16 border-t border-gray-100">
+            <div className="bg-[#f7e7e8]/40 p-8 md:p-12 rounded-sm border border-[#f7e7e8]">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#a53f4b] mb-4 text-center md:text-left">Free Access</p>
+              <h3 className="font-serif text-3xl text-[#2a2a2a] mb-6 leading-snug">Start Here: The Complete Career Pivot Resource Hub — Free Tools</h3>
+              
+              <div className="space-y-6 text-sm leading-relaxed text-[#5a5050]">
+                <p><strong>Stop getting auto-rejected as support staff.</strong> Use these exact frameworks to signal leadership, beat the algorithm, and secure your career pivot.</p>
+                
+                <p>If you are applying to dozen of roles and hearing nothing back, you are likely stuck in the <strong>Ghost Zone</strong> with an ATS score of 42/100. Recruiters filter for leadership, not support. If your resume signals assistant, you are invisible.</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                  <div className="bg-white/60 p-5 rounded-sm flex gap-4">
+                    <BookOpen size={20} className="shrink-0 text-[#a53f4b]" />
+                    <div>
+                      <h4 className="font-bold text-xs uppercase tracking-wider text-[#2a2a2a] mb-1">PM Pivot Playbooks</h4>
+                      <p className="text-[11px]">Verb Audits and the Big 5 PM Metric framework.</p>
+                    </div>
+                  </div>
+                  <div className="bg-white/60 p-5 rounded-sm flex gap-4">
+                    <ShieldCheck size={20} className="shrink-0 text-[#a53f4b]" />
+                    <div>
+                      <h4 className="font-bold text-xs uppercase tracking-wider text-[#2a2a2a] mb-1">Healthcare Toolkit</h4>
+                      <p className="text-[11px]">Escape the clerical trap and pivot into operations.</p>
+                    </div>
+                  </div>
+                  <div className="bg-white/60 p-5 rounded-sm flex gap-4">
+                    <Cpu size={20} className="shrink-0 text-[#a53f4b]" />
+                    <div>
+                      <h4 className="font-bold text-xs uppercase tracking-wider text-[#2a2a2a] mb-1">DevOps Bridge</h4>
+                      <p className="text-[11px]">Binary gate keywords required to hit 90/100.</p>
+                    </div>
+                  </div>
+                  <div className="bg-white/60 p-5 rounded-sm flex gap-4">
+                    <Database size={20} className="shrink-0 text-[#a53f4b]" />
+                    <div>
+                      <h4 className="font-bold text-xs uppercase tracking-wider text-[#2a2a2a] mb-1">Data Makeover</h4>
+                      <p className="text-[11px]">Transition from Ops to Analyst by mirroring SQL/Power BI.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-8 text-center">
+                  <p className="mb-6 font-bold text-[#2a2a2a] uppercase tracking-widest text-[10px]">Enter your email below to instantly unlock the vault.</p>
+                  <a href="https://forms.gle/8LE6XKDuwZPAskhH9" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#2a2a2a] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-12 py-5 hover:bg-[#a53f4b] transition-all shadow-lg w-full md:w-auto">
+                    UNLOCK THE RESOURCE HUB
+                  </a>
+                  <p className="mt-4 text-[10px] text-[#6b5c5c] uppercase tracking-widest italic">Includes 6 PDF toolkits, worksheets, and ATS cheat sheets.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Substack Blog Section */}
+      <section className="py-24 px-6 lg:px-24 max-w-7xl mx-auto border-t border-gray-200">
+        <div className="text-center mb-16">
+          <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#6b5c5c] mb-4">Career Insights</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#2a2a2a] uppercase">Latest on Substack</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Article 1 */}
+          <a href="https://open.substack.com/pub/interviewintel/p/beat-the-binary-gate?r=7nd4nd&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="w-full h-64 overflow-hidden rounded-sm mb-6 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="ATS Binary Gate" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <p className="text-[10px] text-[#6b5c5c] uppercase tracking-widest mb-2 font-bold">Pivot Guides • Feb 2026</p>
+            <h3 className="font-serif text-2xl text-[#2a2a2a] mb-3 group-hover:text-[#a53f4b] transition-colors leading-tight">How the ATS Actually Works (And Why You're Getting Rejected at 2 AM)</h3>
+            <p className="text-[#5a5050] text-sm leading-relaxed mb-4 line-clamp-3">You did everything right. You tailored every bullet. Then you woke up to a rejection at 2:17 AM—long before any human could have seen your application.</p>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#2a2a2a] group-hover:text-[#a53f4b] flex items-center gap-2 transition-colors">Read on Substack <ArrowRight size={12} /></span>
+          </a>
+
+          {/* Article 2 */}
+          <a href="https://interviewintel.substack.com/p/the-february-intelligence-report-2026?r=7nd4nd" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="w-full h-64 overflow-hidden rounded-sm mb-6 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=600" alt="Market Intel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <p className="text-[10px] text-[#6b5c5c] uppercase tracking-widest mb-2 font-bold">Market Intel • Mar 2026</p>
+            <h3 className="font-serif text-2xl text-[#2a2a2a] mb-3 group-hover:text-[#a53f4b] transition-colors leading-tight">The February Intelligence Report: The Panic Goes Mainstream</h3>
+            <p className="text-[#5a5050] text-sm leading-relaxed mb-4 line-clamp-3">January hit like a headline. Record layoffs. Historic numbers. February is when the fear went viral. The anxiety that job seekers felt quietly suddenly had a name.</p>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#2a2a2a] group-hover:text-[#a53f4b] flex items-center gap-2 transition-colors">Read on Substack <ArrowRight size={12} /></span>
+          </a>
+
+          {/* Article 3 */}
+          <a href="https://interviewintel.substack.com/p/ops-to-analyst-resume-signal-debate" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="w-full h-64 overflow-hidden rounded-sm mb-6 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=600" alt="Podcast Episode" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <p className="text-[10px] text-[#6b5c5c] uppercase tracking-widest mb-2 font-bold">Podcast • Career Strategy</p>
+            <h3 className="font-serif text-2xl text-[#2a2a2a] mb-3 group-hover:text-[#a53f4b] transition-colors leading-tight">Signal Over Skills: The Ops-to-Analyst Career Hack</h3>
+            <p className="text-[#5a5050] text-sm leading-relaxed mb-4 line-clamp-3">Discover how to successfully transition from operations to an analyst role. We break down why optimizing for "signal" is more powerful than listing hard skills.</p>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#2a2a2a] group-hover:text-[#a53f4b] flex items-center gap-2 transition-colors">Listen on Substack <ArrowRight size={12} /></span>
+          </a>
         </div>
         
-        <div class="mt-16 text-center">
-            <a href="https://interviewintel.substack.com/subscribe" target="_blank" class="inline-block border border-brand-accent text-brand-text text-[10px] font-bold uppercase tracking-[0.2em] px-10 py-5 hover:bg-brand-accent hover:text-white transition-colors shadow-sm bg-transparent">
-                SUBSCRIBE TO THE NEWSLETTER
+        <div className="mt-16 text-center">
+          <a href="https://interviewintel.substack.com/subscribe" target="_blank" rel="noopener noreferrer" className="inline-block border border-[#dfcabc] text-[#2a2a2a] text-[10px] font-bold uppercase tracking-[0.2em] px-10 py-5 hover:bg-[#dfcabc] hover:text-white transition-colors shadow-sm bg-transparent">
+            Subscribe to the Newsletter
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#2a2a2a] text-[#fbfaf9] py-16 px-6 lg:px-24">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-center md:text-left">
+          <div>
+            <h3 className="font-serif text-3xl mb-4 text-white">Interview Ally</h3>
+            <p className="text-sm text-gray-400 max-w-xs leading-relaxed mx-auto md:mx-0">
+              Your ally against algorithms. Helping grads, switchers, and professionals land top offers.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Contact Us</h4>
+            <a href="mailto:hello.interviewally@gmail.com" className="text-sm hover:text-[#dfcabc] transition-colors block mb-2 text-white font-bold flex items-center justify-center md:justify-start gap-2">
+              <Mail size={16} /> hello.interviewally@gmail.com
             </a>
+            <p className="text-sm text-gray-400">Response time: 24 hours</p>
+          </div>
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Legal & Privacy</h4>
+            <a href="https://drive.google.com/file/d/1GlONo6J67lLwVSst1a0eEJIq1MTX5HNg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#dfcabc] transition-colors block mb-3 text-white">Privacy Policy</a>
+            <a href="https://drive.google.com/file/d/1oizkhGClVPMHm_MZanONv9I6tHm2NH7B/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#dfcabc] transition-colors block mb-3 text-white">Terms of Service</a>
+            <a href="https://drive.google.com/file/d/1--m91MOCZRZVRBAo5z9wGoyrOrfm_6W5/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#dfcabc] transition-colors block text-white">Digital and Return Policy</a>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#2a2a2a] text-[#fbfaf9] py-16 px-6 lg:px-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            <div>
-                <h3 class="font-serif text-3xl mb-4 text-white">Interview Ally</h3>
-                <p class="text-sm text-gray-400 max-w-xs leading-relaxed">
-                    Your ally against algorithms. Helping grads, switchers, and professionals land top offers.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Contact Us</h4>
-                <a href="mailto:hello.interviewally@gmail.com" class="text-sm hover:text-brand-accent transition-colors block mb-2 text-white font-bold">hello.interviewally@gmail.com</a>
-                <p class="text-sm text-gray-400">Response time: 24 hours</p>
-            </div>
-            <div>
-                <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Legal & Privacy</h4>
-                <a href="https://drive.google.com/file/d/1GlONo6J67lLwVSst1a0eEJIq1MTX5HNg/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-brand-accent transition-colors block mb-3 text-white">Privacy Policy</a>
-                <a href="https://drive.google.com/file/d/1oizkhGClVPMHm_MZanONv9I6tHm2NH7B/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-brand-accent transition-colors block mb-3 text-white">Terms of Service</a>
-                <a href="https://drive.google.com/file/d/1--m91MOCZRZVRBAo5z9wGoyrOrfm_6W5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-brand-accent transition-colors block text-white">Digital and Return Policy</a>
-            </div>
+        <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-700 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+          <p>&copy; 2026 Interview Ally. All rights reserved.</p>
+          <p className="mt-4 md:mt-0 uppercase tracking-widest text-[10px]">Designed to get you hired.</p>
         </div>
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-700 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2026 Interview Ally. All rights reserved.</p>
-            <p class="mt-4 md:mt-0 uppercase tracking-widest text-[10px]">Designed to get you hired.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+      </footer>
+    </div>
+  );
+}
